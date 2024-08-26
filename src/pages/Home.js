@@ -1,31 +1,34 @@
-import React, { useRef, useState } from 'react';
-
+import React from 'react';
+import { TypeAnimation } from 'react-type-animation';
+import { useGlitch } from 'react-powerglitch'; // Use the correct export
+ // Ensure this is imported if using a separate CSS file
 
 export const Home = () => {
-    const videoRef = useRef(null);
-    const [isMuted, setIsMuted] = useState(false);
-
-    const toggleMute = () => {
-        const video = videoRef.current;
-        video.muted = !video.muted;
-        setIsMuted(video.muted);
-    };
+    const glitch = useGlitch();
 
     return (
-        <div>
-            <video 
-                width="100%" 
-                ref={videoRef}
-                autoPlay
-                muted={isMuted}
-                loop
-            >
-                <source src={`${process.env.PUBLIC_URL}/images/who-am-i-yt-vid.mp4`} type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-            <button className="video-muter-button" onClick={toggleMute}>
-                {isMuted ? 'Unmute' : 'Mute'}
-            </button>
+        <div className="page-container">
+            <div className="left-column">
+                <TypeAnimation
+                    className='type-animation'
+                    sequence={[
+                        'HI, IM OJO OKOKA!',
+                        1000
+                    ]}
+                    speed={50}
+                    repeat={Infinity}
+                />
+            </div>
+            <div className="right-column">
+                <span ref={glitch.ref}>
+                    <img 
+                        src="images/MadeByOjo-Logo-Transaprent.png" 
+                        alt="OJOOKOKA.COM"
+                        style={{ width: '600px', height: 'auto' }}
+                    />
+                </span>
+            </div>
         </div>
     );
 };
+

@@ -17,13 +17,7 @@ const Navbar = () => {
   return (
     <nav className="navbar sticky-top navbar-expand-md navbar-light navbar-custom">
       <Link className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} to="/">
-        <span ref={glitch.ref}>
-          <img 
-            src="images/MadeByOjo-Logo-Transaprent.png" 
-            alt="OJOOKOKA.COM"
-            style={{ width: '100px', height: 'auto' }}
-            />
-        </span>
+        MADEBYOJO
       </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span className="navbar-toggler-icon"></span>

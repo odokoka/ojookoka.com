@@ -14,8 +14,7 @@
 .navbar-custom {
   background-color: black; /* Set Navbar background to black */
   color: white;
-  margin-left: 20px;
-  margin-right: 20px;
+  width: auto;
 }
 
 .navbar-custom .navbar-brand,
@@ -37,16 +36,60 @@
   background-image: url(''); /* Optional: Custom toggle icon */
 }
 
-.video-muter-button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+/* Ensure the container is positioned relative */
+.video-container {
+  position: relative;
+  width: 85%;
+  height: auto; /* Adjust as needed */
 }
 
+/* Position the button absolutely within the container */
+.video-muter-button {
+  position: absolute;
+  bottom: 10px; /* Adjust distance from bottom */
+  right: 20px;  /* Adjust distance from right */
+  transition: opacity 0.3s ease;
+  opacity: 0.5; /* Default opacity */
+  background: none; /* Remove default button styling */
+  border: none;   /* Remove default button border */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Full opacity on hover */
 .video-muter-button:hover {
-  background-color: #555;
+  opacity: 1;
+}
+
+.video-muter-button svg {
+  background: none;
+}
+
+.page-container {
+  display: flex;
+  width: 100%;
+  height: 100vh; /* Adjust based on your layout needs */
+}
+
+.left-column {
+  width: 50%; /* Restricts the column to the left half of the page */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  position: relative; /* Position context for child elements */
+  padding: 20px; /* Optional: Add padding */
+}
+
+.right-column {
+  width: 50%; /* Adjust based on your layout needs */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  position: relative; /* Position context for child elements */
+  padding: 20px; /* Add styles for the right column if needed */
+}
+
+.type-animation {
+  font-size: 14em; /* Adjust font size as needed */
+  color: white; /* Ensure text is visible */
+  /* Additional styling for the type animation text */
 }
