@@ -1,19 +1,30 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route, Routes, Navigate, Link, useLocation } from 'react-router-dom';
+import { useGlitch } from 'react-powerglitch'; // Use the correct export
 
 import { Home } from './pages/Home';
-import { BrowserRouter as Router, Route, Routes, Navigate, Link, useLocation } from 'react-router-dom';
 import { AboutMe } from './pages/AboutMe';
 import { Youtube } from './pages/Youtube';
 import { Oboe } from './pages/Oboe';
 
 const Navbar = () => {
   const location = useLocation();
+  const glitch = useGlitch();
+ 
 
   return (
-    <nav className="navbar sticky-top navbar-expand-sm navbar-light navbar-custom">
-      <Link className="navbar-brand" to="/">MyApp</Link>
+    <nav className="navbar sticky-top navbar-expand-md navbar-light navbar-custom">
+      <Link className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} to="/">
+        <span ref={glitch.ref}>
+          <img 
+            src="images/MadeByOjo-Logo-Transaprent.png" 
+            alt="OJOOKOKA.COM"
+            style={{ width: '100px', height: 'auto' }}
+            />
+        </span>
+      </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -24,7 +35,7 @@ const Navbar = () => {
               className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} 
               to="/"
             >
-              Home
+              HOME
             </Link>
           </li>
           <li className="nav-item">
@@ -32,7 +43,7 @@ const Navbar = () => {
               className={`nav-link ${location.pathname === '/aboutme' ? 'active' : ''}`} 
               to="/aboutme"
             >
-              About Me
+              ABOUT ME
             </Link>
           </li>
           <li className="nav-item">
@@ -40,7 +51,7 @@ const Navbar = () => {
               className={`nav-link ${location.pathname === '/youtube' ? 'active' : ''}`} 
               to="/youtube"
             >
-              Youtube
+              YOUTUBE
             </Link>
           </li>
           <li className="nav-item">
@@ -48,7 +59,7 @@ const Navbar = () => {
               className={`nav-link ${location.pathname === '/oboe' ? 'active' : ''}`} 
               to="/oboe"
             >
-              Oboe
+              OBOE
             </Link>
           </li>
         </ul>
