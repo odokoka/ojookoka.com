@@ -7,7 +7,7 @@ import { useGlitch } from 'react-powerglitch'; // Use the correct export
 import { Home } from './pages/Home';
 import { AboutMe } from './pages/AboutMe';
 import { Youtube } from './pages/Youtube';
-import { Oboe } from './pages/Oboe';
+import { GraphicDesign } from './pages/GraphicDesign';
 
 const Navbar = () => {
   const location = useLocation();
@@ -17,7 +17,12 @@ const Navbar = () => {
   return (
     <nav className="navbar sticky-top navbar-expand-md navbar-light navbar-custom">
       <Link className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} to="/">
-        MADEBYOJO
+        <img 
+            
+            src="images/MADEBYOJO-LOGO.png" 
+            alt="OJOOKOKA.COM"
+            style={{width: '100px', height: 'auto', marginLeft: '15px'}}
+          />
       </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span className="navbar-toggler-icon"></span>
@@ -51,9 +56,9 @@ const Navbar = () => {
           <li className="nav-item">
             <Link 
               className={`nav-link ${location.pathname === '/oboe' ? 'active' : ''}`} 
-              to="/oboe"
+              to="/graphicdesign"
             >
-              OBOE
+              GRAPHIC DESIGN
             </Link>
           </li>
         </ul>
@@ -70,7 +75,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/aboutme" element={<AboutMe />} />
         <Route path="/youtube" element={<Youtube />} />
-        <Route path="/oboe" element={<Oboe />} />
+        <Route path="/graphicdesign" element={<GraphicDesign />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

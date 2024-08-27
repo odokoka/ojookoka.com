@@ -22,9 +22,9 @@ export const Home = () => {
             <div className="right-column">
                 <span ref={glitch.ref}>
                     <img 
-                        src="images/MadeByOjo-Logo-Transaprent.png" 
+                        src="images/HeartMBOLogo.png" 
                         alt="OJOOKOKA.COM"
-                        style={{ width: '600px', height: 'auto' }}
+                        style={{ width: '100%', height: 'auto' }}
                     />
                 </span>
             </div>

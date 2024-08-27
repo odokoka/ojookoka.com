@@ -6,13 +6,26 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  background-color: black;
   color: white;
   font-family: 'Bebas Neue';
 }
 
+body {
+  background-image: url("../public/images/MBO-Background.jpg");
+  background-size: cover; /* Ensures the background image covers the entire container */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center center; /* Centers the image in the viewport */
+  background-attachment: fixed; /* Keeps the background fixed during scrolling */
+}
+
+::selection {
+  color: black;
+  background-color: white;
+}
+
+
 .navbar-custom {
-  background-color: black; /* Set Navbar background to black */
+  background-color: rgba(0, 0, 0, 0.63); /* Set Navbar background to black */
   color: white;
   width: auto;
 }
@@ -22,10 +35,21 @@
   font-size: 40px;
   color: rgba(255, 255, 255, 0.734);
   transition: color 0.3s ease-in-out; /* Set link color to white */
+  display: inline-block;
+  padding-bottom:2px;
+  background-image: linear-gradient(#ffffff 0 0);
+  background-position: 0 100%; /*OR bottom left*/
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition:
+    background-size 0.3s,
+    background-position 0s 0.3s;
 }
 
 .navbar-custom .nav-link:hover {
-  color: #ffffff; /* Custom color on hover */
+  color: #ffffff;
+  background-position: 100% 100%; /*OR bottom right*/
+  background-size: 100% 2px; /* Custom color on hover */
 }
 
 
@@ -36,11 +60,15 @@
   background-image: url(''); /* Optional: Custom toggle icon */
 }
 
+
+
 /* Ensure the container is positioned relative */
 .video-container {
   position: relative;
-  width: 85%;
-  height: auto; /* Adjust as needed */
+  width: 100%;
+  height: auto;
+  margin: 20 auto;
+  justify-content: center;
 }
 
 /* Position the button absolutely within the container */
@@ -89,7 +117,7 @@
 }
 
 .type-animation {
-  font-size: 14em; /* Adjust font size as needed */
+  font-size: 14vw; /* Adjust font size as needed */
   color: white; /* Ensure text is visible */
   /* Additional styling for the type animation text */
 }
