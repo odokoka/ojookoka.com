@@ -2,18 +2,16 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes, Navigate, Link, useLocation } from 'react-router-dom';
-import { useGlitch } from 'react-powerglitch'; // Use the correct export
 
 import { Home } from './pages/Home';
 import { AboutMe } from './pages/AboutMe';
 import { Youtube } from './pages/Youtube';
 import { GraphicDesign } from './pages/GraphicDesign';
+import Footer from './components/Footer';
 
 const Navbar = () => {
   const location = useLocation();
-  const glitch = useGlitch();
  
-
   return (
     <nav className="navbar sticky-top navbar-expand-md navbar-light navbar-custom">
       <Link className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} to="/">
@@ -55,7 +53,7 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link 
-              className={`nav-link ${location.pathname === '/oboe' ? 'active' : ''}`} 
+              className={`nav-link ${location.pathname === '/graphicdesign' ? 'active' : ''}`} 
               to="/graphicdesign"
             >
               GRAPHIC DESIGN
@@ -70,15 +68,20 @@ const Navbar = () => {
 const App = () => {
   return (
     <Router>
-      <Navbar /> {/* Navbar component with useLocation */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/aboutme" element={<AboutMe />} />
-        <Route path="/youtube" element={<Youtube />} />
-        <Route path="/graphicdesign" element={<GraphicDesign />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </Router>
+      <div className='app-container'>
+        <Navbar /> {/* Navbar component with useLocation */}
+        <div className='content'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/aboutme" element={<AboutMe />} />
+            <Route path="/youtube" element={<Youtube />} />
+            <Route path="/graphicdesign" element={<GraphicDesign />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </div>
+        <Footer /> {/* Footer component with copyright and icons */}
+      </div>
+    </Router> 
   );
 };
 

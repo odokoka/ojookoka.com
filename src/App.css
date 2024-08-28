@@ -17,6 +17,16 @@ body {
   background-position: center center; /* Centers the image in the viewport */
   background-attachment: fixed; /* Keeps the background fixed during scrolling */
 }
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding-bottom: 20px; /* Space for the footer */
+}
 
 ::selection {
   color: black;
@@ -61,6 +71,38 @@ body {
 }
 
 
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  width: 100%;
+  bottom: 0;
+  margin-top: auto;
+}
+
+.footer .icons a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 2em;
+}
+
+.footer .copyright {
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+/* src/App.css or src/Footer.css */
+.footer-icon {
+  font-size: 2rem; /* or whatever size you prefer */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+  color: #fff; /* Initial color */
+}
+
+.footer-icon:hover {
+  transform: translateY(-5px); /* Lift the icon up by 5px */
+  color: #ff6347; /* Optional: Change color on hover */
+}
+
 
 /* Ensure the container is positioned relative */
 .video-container {
@@ -101,7 +143,6 @@ body {
 .left-column {
   width: 50%; /* Restricts the column to the left half of the page */
   display: flex;
-  align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
   position: relative; /* Position context for child elements */
   padding: 20px; /* Optional: Add padding */
@@ -110,7 +151,6 @@ body {
 .right-column {
   width: 50%; /* Adjust based on your layout needs */
   display: flex;
-  align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
   position: relative; /* Position context for child elements */
   padding: 20px; /* Add styles for the right column if needed */
