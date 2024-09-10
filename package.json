@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-import": "^2.30.0"
+    "eslint-plugin-import": "^2.30.0",
+    "postcss": "^8.4.45"
   }
 }
